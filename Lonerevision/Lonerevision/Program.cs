@@ -79,9 +79,9 @@ namespace Lonerevision
 
             //Skriver ut average, median och spread
             Console.WriteLine("--------------------------------");
-            Console.WriteLine("Medellön       :{0,15:c}", average);            
-            Console.WriteLine("Medianön       :{0,15:c}", median);
-            Console.WriteLine("Lönespridning  :{0,15:c}", spread);
+            Console.WriteLine("Medellön       :{0,15:c0}", average);            
+            Console.WriteLine("Medianlön      :{0,15:c0}", median);
+            Console.WriteLine("Lönespridning  :{0,15:c0}", spread);
             Console.WriteLine("--------------------------------");
             //Skriver ut den osorterade arrayen
 
