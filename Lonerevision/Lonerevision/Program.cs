@@ -10,14 +10,40 @@ namespace Lonerevision
     {
         static void Main(string[] args)
         {
-            int nSalaries = readInt("Ange antalet löner att mata in:");
 
-            Console.WriteLine(nSalaries);
+            do
+            {
+                int nSalaries = readInt("Ange antalet löner att mata in:");
+                if (nSalaries >= 2)
+                {
+                    processSalaries(nSalaries);
+                    Console.BackgroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine("Tryck tangent för att börja om - Esc avslutar");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Du måste ange minst 2 löner för att kunna göra en beräkning");
+                    Console.ResetColor();
+                    Console.WriteLine("");
+                    Console.BackgroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine("Tryck tangent för att börja om - Esc avslutar");
+                    Console.ResetColor();
+                }
+            } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
+
+            
+            
+            
+            
+            
+
         }
         //Metoden tilldelar lönerna till en array samt räknar ut medelvärde etc
         private static void processSalaries(int count)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Test");
     
         
         }
