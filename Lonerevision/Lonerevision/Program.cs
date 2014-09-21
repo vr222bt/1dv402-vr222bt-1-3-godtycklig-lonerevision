@@ -38,9 +38,25 @@ namespace Lonerevision
         //Metoden tilldelar lönerna till en array samt räknar ut medelvärde etc
         private static void processSalaries(int count)
         {
-            Console.WriteLine("Test");
-    
-        
+            //Deklarerar variablerna som kommer användas
+            int[] Salaries = new int[count];
+            int[] SortedSalaries = new int[count];
+            int average;
+            int median;
+            int spread;
+
+            for (int i = 0; i < count; i++)
+            {
+                
+            }
+
+
+
+
+
+
+
+            Console.WriteLine("Test");       
         }
 
         //Metoden ska returnera antalet löner som kommer att matas in
