@@ -44,6 +44,8 @@ namespace Lonerevision
             int average;
             int median;
             int spread;
+            
+
 
             //Läser in löner och tilldelar dom till en array
             for (int i = 0; i < count; i++)
@@ -56,12 +58,17 @@ namespace Lonerevision
             Array.Sort(SortedSalaries);
 
             //Räknar ut medelvärdet
+            average = (int)Salaries.Average();
+            
 
             //Räknar ut lönespridningen
+            spread = Salaries.Max() - Salaries.Min();
 
             //Räknar ut medianen
 
             //Skriver ut average, median och spread
+            Console.WriteLine(average);
+            Console.WriteLine(spread);
 
             //Skriver ut den osorterade arrayen
 
