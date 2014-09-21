@@ -18,6 +18,7 @@ namespace Lonerevision
                 {
                     processSalaries(nSalaries);
                     Console.BackgroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine("");
                     Console.WriteLine("Tryck tangent för att börja om - Esc avslutar");
                     Console.ResetColor();
                 }
