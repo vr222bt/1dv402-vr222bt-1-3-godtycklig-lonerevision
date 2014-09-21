@@ -47,7 +47,7 @@ namespace Lonerevision
 
             for (int i = 0; i < count; i++)
             {
-                
+                Salaries[i] = readInt(String.Format("Ange lön nummer {0}:", i + 1));
             }
 
 
