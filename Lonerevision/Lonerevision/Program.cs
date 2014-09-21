@@ -13,7 +13,7 @@ namespace Lonerevision
 
             do
             {
-                int nSalaries = readInt("Ange antalet löner att mata in:");
+                int nSalaries = readInt("Ange antalet löner att mata in: ");
                 if (nSalaries >= 2)
                 {
                     processSalaries(nSalaries);
@@ -50,7 +50,7 @@ namespace Lonerevision
             //Läser in löner och tilldelar dom till en array
             for (int i = 0; i < count; i++)
             {
-                Salaries[i] = readInt(String.Format("Ange lön nummer {0}:", i + 1));
+                Salaries[i] = readInt(String.Format("Ange lön nummer {0}: ", i + 1));
             }
 
             //Kopierar arrayen för att kunna sortera den och ha den osorterade kvar
@@ -90,10 +90,14 @@ namespace Lonerevision
 
             for (int i = 0; i < count; i++)
             {
-                Console.Write("{0} ", Salaries[i]);
+                if (i % 3 == 0)
+                {
+                    Console.WriteLine("");
+                }
+                Console.Write("{0,9} ", Salaries[i]);
                 
             }
-            Console.WriteLine();
+            Console.WriteLine("");
 
 
                
