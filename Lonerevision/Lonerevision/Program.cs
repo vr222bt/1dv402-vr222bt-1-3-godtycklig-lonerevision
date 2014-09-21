@@ -31,15 +31,10 @@ namespace Lonerevision
                     Console.WriteLine("Tryck tangent för att börja om - Esc avslutar");
                     Console.ResetColor();
                 }
-            } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
-
-            
-            
-            
-            
-            
+            } while (Console.ReadKey(true).Key != ConsoleKey.Escape);              
 
         }
+
         //Metoden tilldelar lönerna till en array samt räknar ut medelvärde etc
         private static void processSalaries(int count)
         {
@@ -56,8 +51,8 @@ namespace Lonerevision
                 try
                 {
                     Console.Write(prompt);
-                    int nSalaries = int.Parse(Console.ReadLine());
-                    return nSalaries;
+                    int readInt = int.Parse(Console.ReadLine());
+                    return readInt;
 
 
                 }
@@ -65,7 +60,7 @@ namespace Lonerevision
                 {
 
                     Console.BackgroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Fel format, var god använd siffror");
+                    Console.WriteLine("Fel format, kan inte tolkas som ett heltal");
                     Console.ResetColor();
                 } 
                 catch (OverflowException)
@@ -75,6 +70,8 @@ namespace Lonerevision
                     Console.ResetColor();
                 }
             }
+
+
     
         }
     }
