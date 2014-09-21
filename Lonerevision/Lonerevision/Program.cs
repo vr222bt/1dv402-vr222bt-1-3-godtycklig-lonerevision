@@ -25,10 +25,30 @@ namespace Lonerevision
         //Metoden ska returnera antalet löner som kommer att matas in
         private static int readInt(string prompt)
         {
-            Console.Write(prompt);
-            int nSalaries = int.Parse(Console.ReadLine());
-            return nSalaries;
-            
+            while (true)
+            {
+                try
+                {
+                    Console.Write(prompt);
+                    int nSalaries = int.Parse(Console.ReadLine());
+                    return nSalaries;
+
+
+                }
+                catch (FormatException)
+                {
+
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Fel format, var god använd siffror");
+                    Console.ResetColor();
+                } 
+                catch (OverflowException)
+                {
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine("För stort antal siffror");
+                    Console.ResetColor();
+                }
+            }
     
         }
     }
