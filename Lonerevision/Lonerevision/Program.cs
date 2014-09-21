@@ -58,7 +58,7 @@ namespace Lonerevision
             Array.Sort(SortedSalaries);
 
             //Räknar ut medelvärdet
-            average = Math.Round(Salaries.Average());
+            average = Math.Round((double)Salaries.Average());
             
 
             //Räknar ut lönespridningen
@@ -78,13 +78,22 @@ namespace Lonerevision
             }
 
             //Skriver ut average, median och spread
+            Console.WriteLine();
             Console.WriteLine("--------------------------------");
             Console.WriteLine("Medellön       :{0,15:c0}", average);            
             Console.WriteLine("Medianlön      :{0,15:c0}", median);
             Console.WriteLine("Lönespridning  :{0,15:c0}", spread);
             Console.WriteLine("--------------------------------");
+            Console.WriteLine();
+
             //Skriver ut den osorterade arrayen
 
+            for (int i = 0; i < count; i++)
+            {
+                Console.Write("{0} ", Salaries[i]);
+                
+            }
+            Console.WriteLine();
 
 
                
