@@ -45,18 +45,29 @@ namespace Lonerevision
             int median;
             int spread;
 
+            //Läser in löner och tilldelar dom till en array
             for (int i = 0; i < count; i++)
             {
                 Salaries[i] = readInt(String.Format("Ange lön nummer {0}:", i + 1));
             }
 
+            //Kopierar arrayen för att kunna sortera den och ha den osorterade kvar
+            Array.Copy(Salaries, SortedSalaries, count);                     
+            Array.Sort(SortedSalaries);
+
+            //Räknar ut medelvärdet
+
+            //Räknar ut lönespridningen
+
+            //Räknar ut medianen
+
+            //Skriver ut average, median och spread
+
+            //Skriver ut den osorterade arrayen
 
 
 
-
-
-
-            Console.WriteLine("Test");       
+               
         }
 
         //Metoden ska returnera antalet löner som kommer att matas in
