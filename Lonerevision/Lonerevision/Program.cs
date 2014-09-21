@@ -10,14 +10,12 @@ namespace Lonerevision
     {
         static void Main(string[] args)
         {
+            int nSalaries = readInt("Ange antalet löner att mata in:");
 
-
-
-
+            Console.WriteLine(nSalaries);
         }
-
         //Metoden tilldelar lönerna till en array samt räknar ut medelvärde etc
-        static void processSalaries(int count)
+        private static void processSalaries(int count)
         {
             throw new NotImplementedException();
     
@@ -25,10 +23,12 @@ namespace Lonerevision
         }
 
         //Metoden ska returnera antalet löner som kommer att matas in
-        static int readInt(string prompt)
+        private static int readInt(string prompt)
         {
-
-            throw new NotImplementedException();
+            Console.Write(prompt);
+            int nSalaries = int.Parse(Console.ReadLine());
+            return nSalaries;
+            
     
         }
     }
