@@ -46,8 +46,6 @@ namespace Lonerevision
             double median;
             int spread;
             
-
-
             //Läser in löner och tilldelar dom till en array
             for (int i = 0; i < count; i++)
             {
@@ -74,7 +72,7 @@ namespace Lonerevision
             else
             {
                 int value2 = count / 2;
-                median = Math.Round(((double)SortedSalaries[value2] + SortedSalaries[value2 - 1]) / 2);
+                median = Math.Round((SortedSalaries[value2] + SortedSalaries[value2 - 1]) / 2.0);
                 
             }
 
@@ -99,8 +97,6 @@ namespace Lonerevision
                 
             }
             Console.WriteLine("");
-
-
                
         }
 
@@ -130,10 +126,7 @@ namespace Lonerevision
                     Console.WriteLine("För stort antal siffror");
                     Console.ResetColor();
                 }
-            }
-
-
-    
+            }   
         }
     }
 }
