@@ -10,38 +10,33 @@ namespace Lonerevision
     {
         static void Main(string[] args)
         {
-
             do
             {
-                int nSalaries = readInt("Ange antalet löner att mata in: ");
+                int nSalaries = ReadInt("Ange antalet löner att mata in: ");
                 if (nSalaries >= 2)
                 {
-                    processSalaries(nSalaries);
-                    Console.BackgroundColor = ConsoleColor.DarkGreen;
-                    Console.WriteLine("");
-                    Console.WriteLine("Tryck tangent för att börja om - Esc avslutar");
-                    Console.ResetColor();
+                    ProcessSalaries(nSalaries);
                 }
                 else
                 {
                     Console.BackgroundColor = ConsoleColor.Red;
                     Console.WriteLine("Du måste ange minst 2 löner för att kunna göra en beräkning");
                     Console.ResetColor();
-                    Console.WriteLine("");
-                    Console.BackgroundColor = ConsoleColor.DarkGreen;
-                    Console.WriteLine("Tryck tangent för att börja om - Esc avslutar");
-                    Console.ResetColor();
                 }
+                Console.BackgroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine("");
+                Console.WriteLine("Tryck tangent för att börja om - Esc avslutar");
+                Console.ResetColor();
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);              
 
         }
 
         //Metoden tilldelar lönerna till en array samt räknar ut medelvärde etc
-        private static void processSalaries(int count)
+        private static void ProcessSalaries(int count)
         {
             //Deklarerar variablerna som kommer användas
-            int[] Salaries = new int[count];
-            int[] SortedSalaries = new int[count];
+            int[] salaries = new int[count];
+            int[] sortedSalaries = new int[count];
             double average;
             double median;
             int spread;
@@ -49,37 +44,36 @@ namespace Lonerevision
             //Läser in löner och tilldelar dom till en array
             for (int i = 0; i < count; i++)
             {
-                Salaries[i] = readInt(String.Format("Ange lön nummer {0}: ", i + 1));
+                salaries[i] = ReadInt(String.Format("Ange lön nummer {0}: ", i + 1));
             }
 
             //Kopierar arrayen för att kunna sortera den och ha den osorterade kvar
-            Array.Copy(Salaries, SortedSalaries, count);                     
-            Array.Sort(SortedSalaries);
+            Array.Copy(salaries, sortedSalaries, count);                     
+            Array.Sort(sortedSalaries);
 
             //Räknar ut medelvärdet
-            average = Math.Round((double)Salaries.Average());
+            average = Math.Round((double)salaries.Average());
             
 
             //Räknar ut lönespridningen
-            spread = Salaries.Max() - Salaries.Min();
+            spread = salaries.Max() - salaries.Min();
 
             //Räknar ut medianen
+            int index = count / 2;
             if (count % 2 != 0)
             {
-                int value1 = count / 2;
-                median = (SortedSalaries[value1]); 
+                median = (sortedSalaries[index]); 
             }
             else
             {
-                int value2 = count / 2;
-                median = Math.Round((SortedSalaries[value2] + SortedSalaries[value2 - 1]) / 2.0);
+                median = Math.Round((sortedSalaries[index] + sortedSalaries[index- 1]) / 2.0);
                 
             }
 
             //Skriver ut average, median och spread
             Console.WriteLine();
             Console.WriteLine("--------------------------------");
-            Console.WriteLine("Medellön       :{0,15:c0}", average);            
+            Console.WriteLine("Medellön       :{0,15:c0}", salaries.Average());            
             Console.WriteLine("Medianlön      :{0,15:c0}", median);
             Console.WriteLine("Lönespridning  :{0,15:c0}", spread);
             Console.WriteLine("--------------------------------");
@@ -91,27 +85,24 @@ namespace Lonerevision
             {
                 if (i % 3 == 0)
                 {
-                    Console.WriteLine("");
+                    Console.WriteLine();
                 }
-                Console.Write("{0,9} ", Salaries[i]);
+                Console.Write("{0,9} ", salaries[i]);
                 
             }
-            Console.WriteLine("");
+            Console.WriteLine();
                
         }
 
         //Metoden ska returnera antalet löner som kommer att matas in
-        private static int readInt(string prompt)
+        private static int ReadInt(string prompt)
         {
             while (true)
             {
                 try
                 {
                     Console.Write(prompt);
-                    int readInt = int.Parse(Console.ReadLine());
-                    return readInt;
-
-
+                    return int.Parse(Console.ReadLine());
                 }
                 catch (FormatException)
                 {
